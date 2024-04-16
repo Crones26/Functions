@@ -7,9 +7,16 @@ using std::endl;
 #define tab "\t"
 
 void FillRand(int arr[], const int n);
+void FillRand(double arr[], const int n);
+
 void Print(const int arr[], const int n);
+void Print(double arr[], const int n);
+
 void Sort(int arr[], const int n);
+
 int Sum(const int arr[], const int n);
+double Sum(double arr[], const int n);
+
 double Avg(const int arr[], const int n);
 int minValueIn(const int arr[], const int n);
 int maxValueIn(const int arr[], const int n);
@@ -30,23 +37,31 @@ void main()
 	cout << "Отсортированный массив: ";
 	Sort(arr, n);
 	Print(arr, n);
-	cout << "Сумма чисел " << Sum(arr, n) << endl;
-	cout << "Среднее значение: " << Avg(arr, n) << endl;
+	cout << "Сумма элементов массива: " << Sum(arr, n) << endl;
+	cout << "Среднее значение элементов массива: " << Avg(arr, n) << endl;
 	cout << "Минимальное значение: " << minValueIn(arr, n) << endl;
 	cout << "Максимальное значение: " << maxValueIn(arr, n) << endl;
-	// Сдвиг массива влево на указанное количество позиций
-	copy(originalArr, originalArr + n, arr); //Копия основного масcива
-	cout << "Введите количество позиций для сдвига влево: ";
-	cin >> shiftLeftValue;
-	Print(arr, n);
-	shiftLeft(arr, n, shiftLeftValue);
-	// Сдвиг массива вправо на указанное количество позиций
-	copy(originalArr, originalArr + n, arr);//Копия основного массива
-	cout << "Введите количество позиций для сдвига вправо: ";
-	cin >> shiftRightValue;
-	Print(arr, n);
-	shiftRight(arr, n, shiftRightValue);
-}
+	//// Сдвиг массива влево на указанное количество позиций
+	//copy(originalArr, originalArr + n, arr); //Копия основного масcива
+	//cout << "Введите количество позиций для сдвига влево: ";
+	//cin >> shiftLeftValue;
+	//Print(arr, n);
+	//shiftLeft(arr, n, shiftLeftValue);
+	//// Сдвиг массива вправо на указанное количество позиций
+	//copy(originalArr, originalArr + n, arr);//Копия основного массива
+	//cout << "Введите количество позиций для сдвига вправо: ";
+	//cin >> shiftRightValue;
+	//Print(arr, n);
+	//shiftRight(arr, n, shiftRightValue);
+	const int SIZE = 8;
+	double brr[SIZE];
+	FillRand(brr, SIZE);
+	Print(brr, SIZE);
+	cout << "Сумма элементов массива: " << Sum(brr, SIZE) << endl;
+	//cout << "Среднее-арифмитическое элементов массива: " << Avg(brr, SIZE) << endl;
+	//cout << "Минимальное значение элементов массива: " << maxValueIn(brr, SIZE) << endl;
+	//cout << "Максимальное значение элементов массива: " << maxValueIn(arr, n) << endl;
+}	
 
 void FillRand(int arr[], const int n)
 {
@@ -54,8 +69,21 @@ void FillRand(int arr[], const int n)
 	{
 		arr[i] = rand() % 100;
 	}
+}void FillRand(double arr[], const int n)
+{
+	for (int i = 0; i < n; i++)
+	{
+		arr[i] = rand() % 100;
+	}
 }
 void Print(const int arr[], const int n)
+{
+	for (int i = 0; i < n; i++)
+	{
+		cout << arr[i] << tab;
+	}
+	cout << endl;
+}void Print(double arr[], const int n)
 {
 	for (int i = 0; i < n; i++)
 	{
@@ -86,6 +114,14 @@ int Sum(const int arr[], const int n)
         sum += arr[i];
     }
     return sum;
+}double Sum(double arr[], const int n)
+{
+    int sum = 0;
+    for (int i = 0; i < n; i++)
+    {
+        sum += arr[i];
+    }
+    return sum;
 }
 double Avg(const int arr[], const int n)
 {
@@ -94,7 +130,7 @@ double Avg(const int arr[], const int n)
 int minValueIn(const int arr[], const int n)
 {
     int minVal = arr[0];
-    for (int i = 1; i < n; i++)
+    for (int i = 0; i < n; i++)
     {
         if (arr[i] < minVal)
         {
@@ -106,7 +142,7 @@ int minValueIn(const int arr[], const int n)
 int maxValueIn(const int arr[], const int n)
 {
     int maxVal = arr[0];
-    for (int i = 1; i < n; i++)
+    for (int i = 0; i < n; i++)
     {
         if (arr[i] > maxVal)
         {
