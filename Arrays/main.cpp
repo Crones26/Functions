@@ -1,4 +1,4 @@
-#include <iostream>
+п»ї#include <iostream>
 using namespace std;
 using std::cin;
 using std::cout;
@@ -22,27 +22,27 @@ void main()
 	const int n = 5;
 	int arr[n];
 	int originalArr[n];
-	cout << "Исходный массив:        ";
+	cout << "РСЃС…РѕРґРЅС‹Р№ РјР°СЃСЃРёРІ:        ";
 	FillRand(arr, n);
-	copy(arr, arr + n, originalArr);//Копия основного массива нужна для сдвига 
-	Print(arr, n);					//оригинального массива, а не отсортированного.
-	cout << "Отсортированный массив: ";
+	copy(arr, arr + n, originalArr);//РљРѕРїРёСЏ РѕСЃРЅРѕРІРЅРѕРіРѕ РјР°СЃСЃРёРІР° РЅСѓР¶РЅР° РґР»СЏ СЃРґРІРёРіР° 
+	Print(arr, n);					//РѕСЂРёРіРёРЅР°Р»СЊРЅРѕРіРѕ РјР°СЃСЃРёРІР°, Р° РЅРµ РѕС‚СЃРѕСЂС‚РёСЂРѕРІР°РЅРЅРѕРіРѕ.
+	cout << "РћС‚СЃРѕСЂС‚РёСЂРѕРІР°РЅРЅС‹Р№ РјР°СЃСЃРёРІ: ";
 	Sort(arr, n);
 	Print(arr, n);
-	cout << "Сумма чисел " << Sum(arr, n) << endl;
-	cout << "Среднее значение: " << Avg(arr, n) << endl;
-	cout << "Минимальное значение: " << minValueIn(arr, n) << endl;
-	cout << "Максимальное значение: " << maxValueIn(arr, n) << endl;
-	// Сдвиг влево на указанное количество позиций
+	cout << "РЎСѓРјРјР° С‡РёСЃРµР» " << Sum(arr, n) << endl;
+	cout << "РЎСЂРµРґРЅРµРµ Р·РЅР°С‡РµРЅРёРµ: " << Avg(arr, n) << endl;
+	cout << "РњРёРЅРёРјР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ: " << minValueIn(arr, n) << endl;
+	cout << "РњР°РєСЃРёРјР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ: " << maxValueIn(arr, n) << endl;
+	// РЎРґРІРёРі РІР»РµРІРѕ РЅР° СѓРєР°Р·Р°РЅРЅРѕРµ РєРѕР»РёС‡РµСЃС‚РІРѕ РїРѕР·РёС†РёР№
 int shiftLeftValue, shiftRightValue;
-	copy(originalArr, originalArr + n, arr); //Копия основного масcива
-	cout << "Введите количество позиций для сдвига влево: ";
+	copy(originalArr, originalArr + n, arr); //РљРѕРїРёСЏ РѕСЃРЅРѕРІРЅРѕРіРѕ РјР°СЃcРёРІР°
+	cout << "Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ РїРѕР·РёС†РёР№ РґР»СЏ СЃРґРІРёРіР° РІР»РµРІРѕ: ";
 	cin >> shiftLeftValue;
 	Print(arr, n);
 	shiftLeft(arr, n, shiftLeftValue);
-	// Сдвиг вправо на указанное количество позиций
-	copy(originalArr, originalArr + n, arr);//Копия основного массива
-	cout << "Введите количество позиций для сдвига вправо: ";
+	// РЎРґРІРёРі РІРїСЂР°РІРѕ РЅР° СѓРєР°Р·Р°РЅРЅРѕРµ РєРѕР»РёС‡РµСЃС‚РІРѕ РїРѕР·РёС†РёР№
+	copy(originalArr, originalArr + n, arr);//РљРѕРїРёСЏ РѕСЃРЅРѕРІРЅРѕРіРѕ РјР°СЃСЃРёРІР°
+	cout << "Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ РїРѕР·РёС†РёР№ РґР»СЏ СЃРґРІРёРіР° РІРїСЂР°РІРѕ: ";
 	cin >> shiftRightValue;
 	Print(arr, n);
 	shiftRight(arr, n, shiftRightValue);
