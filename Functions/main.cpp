@@ -66,7 +66,6 @@ void main()
 			fact *= i;
 		}
 		return fact;
-
 	}
 	// Power
 	double Power(double a, int n)
