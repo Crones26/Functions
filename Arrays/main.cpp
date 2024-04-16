@@ -22,6 +22,7 @@ void main()
 	const int n = 5;
 	int arr[n];
 	int originalArr[n];
+	int shiftLeftValue, shiftRightValue;
 	cout << "Исходный массив:        ";
 	FillRand(arr, n);
 	copy(arr, arr + n, originalArr);//Копия основного массива нужна для сдвига 
@@ -33,14 +34,13 @@ void main()
 	cout << "Среднее значение: " << Avg(arr, n) << endl;
 	cout << "Минимальное значение: " << minValueIn(arr, n) << endl;
 	cout << "Максимальное значение: " << maxValueIn(arr, n) << endl;
-	// Сдвиг влево на указанное количество позиций
-int shiftLeftValue, shiftRightValue;
+	// Сдвиг массива влево на указанное количество позиций
 	copy(originalArr, originalArr + n, arr); //Копия основного масcива
 	cout << "Введите количество позиций для сдвига влево: ";
 	cin >> shiftLeftValue;
 	Print(arr, n);
 	shiftLeft(arr, n, shiftLeftValue);
-	// Сдвиг вправо на указанное количество позиций
+	// Сдвиг массива вправо на указанное количество позиций
 	copy(originalArr, originalArr + n, arr);//Копия основного массива
 	cout << "Введите количество позиций для сдвига вправо: ";
 	cin >> shiftRightValue;
