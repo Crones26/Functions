@@ -8,6 +8,7 @@ using std::endl;
 #define delimiter "\n----------------------------------------------------------\n"
 const int ROWS = 3;
 const int COLS = 4;
+
 void FillRand(int arr[], const int n);
 void FillRand(double arr[], const int n);
 void FillRand(char arr[], const int n);
@@ -110,7 +111,6 @@ void main()
 	cout << "Максимальное значение элементов массива: " << maxValueIn(c_arr, C_SIZE) << endl;
 	cout << delimiter << endl;
 
-	
 	int i_arr_2[ROWS][COLS];
 	FillRand(i_arr_2, ROWS, COLS);
 	Print(i_arr_2, ROWS, COLS);
@@ -208,7 +208,7 @@ void Sort(double arr[], const int n)
 		{
 			if (arr[j] < arr[i])
 			{
-				int buffer = arr[i];
+				double buffer = arr[i];
 				arr[i] = arr[j];
 				arr[j] = buffer;
 			}
@@ -223,7 +223,7 @@ void Sort(char arr[], const int n)
 		{
 			if (arr[j] < arr[i])
 			{
-				int buffer = arr[i];
+				char buffer = arr[i];
 				arr[i] = arr[j];
 				arr[j] = buffer;
 			}
@@ -253,7 +253,7 @@ int Sum(const int arr[], const int n)
 }
 double Sum(double arr[], const int n)
 {
-    int sum = 0;
+    double sum = 0;
     for (int i = 0; i < n; i++)
     {
         sum += arr[i];
@@ -294,6 +294,10 @@ double Avg(char arr[], const int n)
 {
     return (double)Sum(arr, n) / n; 
 }
+double Avg(int arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	return(double)Sum(arr, ROWS, COLS) / (ROWS * COLS);
+}
 int minValueIn(const int arr[], const int n)
 {
     int minVal = arr[0];
@@ -306,13 +310,9 @@ int minValueIn(const int arr[], const int n)
     }
     return minVal;
 }
-double Avg(int arr[ROWS][COLS], const int ROWS, const int COLS)
-{
-	return(double)Sum(arr, ROWS, COLS) / (ROWS * COLS);
-}
 double minValueIn(double arr[], const int n)
 {
-    int minVal = arr[0];
+    double minVal = arr[0];
     for (int i = 0; i < n; i++)
     {
         if (arr[i] < minVal)
@@ -324,7 +324,7 @@ double minValueIn(double arr[], const int n)
 }
 int minValueIn(char arr[], const int n)
 {
-    int minVal = arr[0];
+   char minVal = arr[0];
     for (int i = 0; i < n; i++)
     {
         if (arr[i] < minVal)
@@ -348,7 +348,7 @@ int maxValueIn(const int arr[], const int n)
 }
 double maxValueIn(double arr[], const int n)
 {
-    int maxVal = arr[0];
+    double maxVal = arr[0];
     for (int i = 0; i < n; i++)
     {
         if (arr[i] > maxVal)
@@ -391,7 +391,7 @@ void shiftLeft(double arr[], const int n, int shift)
 {
 	for (int i = 0; i < shift; i++)
 	{
-		int buffer = arr[0];
+		double buffer = arr[0];
 		for (int i = 1; i < n; i++)
 		{
 			arr[i - 1] = arr[i];
@@ -408,7 +408,7 @@ void shiftLeft(char arr[], const int n, int shift)
 {
 	for (int i = 0; i < shift; i++)
 	{
-		int buffer = arr[0];
+		char buffer = arr[0];
 		for (int i = 1; i < n; i++)
 		{
 			arr[i - 1] = arr[i];
@@ -425,7 +425,7 @@ void shiftRight(int arr[], const int n, int shift)
 {
 	for (int i = 0; i < shift; i++)
 	{
-		double buffer = arr[n - 1];
+		int buffer = arr[n - 1];
 		for (int i = n - 1; i > 0; i--)
 		{
 			arr[i] = arr[i - 1];
