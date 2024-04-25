@@ -67,8 +67,8 @@ void main()
 	cout << "Среднее-арифмитическое элементов массива: " << Avg(c_arr, C_SIZE) << endl;
 	cout << "Минимальное значение элементов массива: " << minValueIn(c_arr, C_SIZE) << endl;
 	cout << "Максимальное значение элементов массива: " << maxValueIn(c_arr, C_SIZE) << endl;
+	
 	cout << delimiter << endl;
-
 	cout << "Исходный массив: ";
 	FillRand(i_arr_2, ROWS, COLS);
 	Print(i_arr_2, ROWS, COLS);
@@ -90,8 +90,6 @@ void main()
 	Print(i_arr_2, ROWS, COLS);*/
 
 	cout << delimiter << endl;
-
-
 	cout << "Исходный массив: \n";
 	FillRand(d_arr_2, ROWS, COLS);
 	Print(d_arr_2, ROWS, COLS);
@@ -113,7 +111,6 @@ void main()
 	Print(d_arr_2, ROWS, COLS);*/
 
 	cout << delimiter << endl;
-
 	cout << "Исходный массив: \n";
 	FillRand(c_arr_2, ROWS, COLS);
 	Print(c_arr_2, ROWS, COLS);
