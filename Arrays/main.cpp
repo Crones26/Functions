@@ -57,6 +57,7 @@ void main()
 	int shiftLeftValue, shiftRightValue;
 	cout << "Исходный массив:        ";
 	FillRand(arr, n);
+	Print(arr, n);
 	cout << "Отсортированный массив: ";
 	Sort(arr, n);
 	Print(arr, n);
@@ -316,16 +317,6 @@ template<typename T>void Sort(T arr[ROWS][COLS], const int ROWS, const int COLS)
 		}
 	}
 }
-int Sum(int arr[], const int n)
-{
-    int sum = 0;
-    for (int i = 0; i < n; i++)
-    {
-        sum += arr[i];
-    }
-    return sum;
-}
-
 template<typename T>T Sum (T arr[], const int n)
 {
     T sum = 0;
@@ -347,10 +338,6 @@ template<typename T>T Sum(T arr[ROWS][COLS], const int ROWS, const int COLS)
 	}
 	return sum;
 }
-double Avg(int arr[], const int n)
-{
-    return (double)Sum(arr, n) / n;
-}
 template<typename T>double Avg(T arr[], const int n)
 {
     return (double)Sum(arr, n) / n;
@@ -358,19 +345,6 @@ template<typename T>double Avg(T arr[], const int n)
 template<typename T>double Avg(T arr[ROWS][COLS], const int ROWS, const int COLS)
 {
 	return(double)Sum(arr, ROWS, COLS) / (ROWS * COLS);
-}
-
-int minValueIn(int arr[], const int n)
-{
-    int minVal = arr[0];
-    for (int i = 1; i < n; i++)
-    {
-        if (arr[i] < minVal)
-        {
-            minVal = arr[i];
-        }
-    }
-    return minVal;
 }
 template<typename T>T minValueIn(T arr[], const int n)
 {
@@ -426,23 +400,6 @@ template<typename T>T maxValueIn(T arr[ROWS][COLS], const int ROWS, const int CO
 	}
 	return maxVal;
 }
-void shiftLeft(int arr[], const int n, int shift)
-{
-	for (int i = 0; i < shift; i++)
-	{
-		int buffer = arr[0];
-		for (int i = 1; i < n; i++)
-		{
-			arr[i - 1] = arr[i];
-		}
-		arr[n - 1] = buffer;
-		for (int i = 0; i < n; i++)
-		{
-			cout << arr[i] << tab;
-		}
-		cout << endl;
-	}
-}
 template<typename T>void shiftLeft(T arr[], const int n, int shift)
 {
 	for (int i = 0; i < shift; i++)
@@ -473,23 +430,6 @@ template<typename T>void shiftLeft(T arr[ROWS][COLS], const int ROWS, const int 
 			}
 			arr[row][COLS - 1] = buffer;
 		}
-	}
-}
-void shiftRight(int arr[], const int n, int shift)
-{
-	for (int i = 0; i < shift; i++)
-	{
-		int buffer = arr[n - 1];
-		for (int i = n - 1; i > 0; i--)
-		{
-			arr[i] = arr[i - 1];
-		}
-		arr[0] = buffer;
-		for (int i = 0; i < n; i++)
-		{
-			cout << arr[i] << tab;
-		}
-		cout << endl;
 	}
 }
 template<typename T>void shiftRight(T arr[], const int n, int shift)
