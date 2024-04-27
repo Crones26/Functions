@@ -443,8 +443,7 @@ void shiftLeft(int arr[], const int n, int shift)
 		cout << endl;
 	}
 }
-template<typename T>
-void shiftLeft(T arr[], const int n, int shift)
+template<typename T>void shiftLeft(T arr[], const int n, int shift)
 {
 	for (int i = 0; i < shift; i++)
 	{
