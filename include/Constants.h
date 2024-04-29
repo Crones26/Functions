@@ -2,5 +2,5 @@
 
 #define tab "\t"
 #define delimiter "\n----------------------------------------------------------\n"
-const int ROWS = 4;
-const int COLS = 5;
+const int ROWS = 3;
+const int COLS = 4;
