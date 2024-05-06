@@ -150,14 +150,14 @@ void main()
 	cout << "Минимальное значение в массиве: " << minValueIn(c_arr_2, ROWS, COLS) << endl;
 	cout << "Максимальное значение в массиве: " << maxValueIn(c_arr_2, ROWS, COLS) << endl;
 
-	cout << "Введите количество позиций для сдвига влево: ";
+	/*cout << "Введите количество позиций для сдвига влево: ";
 	cin >> shiftValue;
 	shiftLeft(c_arr_2, ROWS, COLS, shiftValue);
 	Print(c_arr_2, ROWS, COLS);
 	cout << "Введите количество позиций для сдвига вправо: ";
 	cin >> shiftValue;
 	shiftRight(c_arr_2, ROWS, COLS, shiftValue);
-	Print(c_arr_2, ROWS, COLS);
+	Print(c_arr_2, ROWS, COLS);*/
 
 #endif // TWO_DIMENSIONAL
 
