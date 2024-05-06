@@ -3,13 +3,10 @@
 
 #include "FillRand.h"
 #include "Print.h"
-#include "Print.cpp"
 #include "Sort.h"
-#include "Sort.cpp"
 #include "Statistics.h"
-#include "Statistics.cpp"
 #include "Shift.h"
-#include "Shift.cpp"
+
 
 #define ONE_DIMENSIONAL
 #define TWO_DIMENSIONAL
